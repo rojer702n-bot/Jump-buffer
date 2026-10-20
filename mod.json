@@ -1,0 +1,65 @@
+{
+  "geode": "v5.11.2",
+  "gd": {
+    "win": "2.2081"
+  },
+  "id": "rojer.jump-buffer",
+  "name": "Jump Buffer",
+  "version": "v1.0.0",
+  "developer": "Rojer",
+  "description": "Predictive jump buffer: if a jump would die, delay it to the earliest safe 240 Hz physics tick within the configured window.",
+  "settings": {
+    "enabled": {
+      "type": "bool",
+      "name": "Enabled",
+      "description": "Enable predictive jump buffering.",
+      "default": true
+    },
+    "ticks": {
+      "type": "int",
+      "name": "Buffer Window (ticks)",
+      "description": "Maximum number of 240 Hz physics ticks the mod may move a jump forward. 4 ticks is about 16.7 ms.",
+      "default": 4,
+      "min": 0,
+      "max": 32,
+      "control": {
+        "arrows": true,
+        "arrow-step": 1,
+        "big-arrows": true,
+        "big-arrow-step": 4,
+        "slider": true,
+        "slider-step": 1,
+        "input": true
+      }
+    },
+    "lookahead": {
+      "type": "int",
+      "name": "Prediction Lookahead (ticks)",
+      "description": "How far the simulation checks after a candidate jump to decide whether it dies. Larger values are more conservative but cost more CPU while predicting.",
+      "default": 12,
+      "min": 1,
+      "max": 60,
+      "control": {
+        "arrows": true,
+        "arrow-step": 1,
+        "big-arrows": true,
+        "big-arrow-step": 4,
+        "slider": true,
+        "slider-step": 1,
+        "input": true
+      }
+    },
+    "practice-only": {
+      "type": "bool",
+      "name": "Practice Mode Only",
+      "description": "Only use the buffer while Practice Mode is active.",
+      "default": false
+    },
+    "hold-modes": {
+      "type": "bool",
+      "name": "Hold Modes",
+      "description": "Allow predictive buffering for ship, UFO, wave, robot, spider and swing-style hold inputs. Disable if you only want cube-style jumps.",
+      "default": false
+    }
+  }
+}

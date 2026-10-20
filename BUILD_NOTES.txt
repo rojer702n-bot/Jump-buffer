@@ -1,0 +1,14 @@
+Target: Geometry Dash 2.2081
+Target platform: Windows 64-bit
+Geode SDK: v5.11.2
+
+This project was created without copying the user's broken build directory.
+Do not include build/ in source control.
+
+Recommended local commands:
+  geode sdk install
+  geode sdk install-binaries
+  geode build
+
+If building through GitHub Actions, push the project to a repository and run
+the "Build Geode Mod" workflow. The official Geode build action is used.
